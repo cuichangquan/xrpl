@@ -86,7 +86,7 @@ du -h ~/xrpl/data
 ```
 
 ## 🧩 環境情報
-Image: xrpllabsofficial/xrpld:latest
-Platform: macOS + Docker Desktop
-DB: NuDB
-履歴: 256 ledgers (online_delete=512)
+- Image: xrpllabsofficial/xrpld:latest
+- Platform: macOS + Docker Desktop
+- DB: NuDB
+- 履歴: 256 ledgers (online_delete=512)
