@@ -7,12 +7,13 @@
 
 ## 📁 ディレクトリ構成
 
+```bash
 ~/xrpl
 ├─ docker-compose.yml # コンテナ構成
 ├─ config/
 │ └─ rippled.cfg # ノード設定（DB・ポートなど）
 └─ data/ # LedgerやDBが保存される永続ディレクトリ
-
+```
 
 ---
 
@@ -29,29 +30,29 @@ docker ps
 docker logs -f xrpld
 ```
 
-🔍 ノード情報確認
-サーバ情報
+## 🔍 ノード情報確認
+### サーバ情報
 ```bash
 curl -s -X POST localhost:5005 \
   -H "Content-Type: application/json" \
   -d '{"method":"server_info"}' | jq
 ```
 
-Ledger範囲
+### Ledger範囲
 ```bash
 curl -s -X POST localhost:5005 \
   -H "Content-Type: application/json" \
   -d '{"method":"ledger_range"}' | jq
 ```
 
-Ledger内容（最新）
+### Ledger内容（最新）
 ```bash
 curl -s -X POST localhost:5005 \
   -H "Content-Type: application/json" \
   -d '{"method":"ledger"}' | jq
 ```
 
-⚙️ 設定概要（config/rippled.cfg）
+## ⚙️ 設定概要（config/rippled.cfg）
 - DB種別: NuDB（非圧縮、安定性重視）
 - 履歴保持: online_delete = 512（約256件の履歴を維持）
 - メモリ設定: [node_size] small（Docker on Macに最適）
@@ -60,12 +61,12 @@ curl -s -X POST localhost:5005 \
   - 6006 : WebSocket
   - 51235 : P2P
 
-💾 データ保存場所
+## 💾 データ保存場所
 コンテナ内： /var/lib/rippled
 ホスト側： ~/xrpl/data
 コンテナを削除しても data/ に Ledger や DB が残るため、再起動後も同期を引き継ぎます。
 
-🧰 よく使うコマンド
+## 🧰 よく使うコマンド
 
 ```bash
 # コンテナの状態を確認
@@ -84,7 +85,7 @@ docker compose down
 du -h ~/xrpl/data
 ```
 
-🧩 環境情報
+## 🧩 環境情報
 Image: xrpllabsofficial/xrpld:latest
 Platform: macOS + Docker Desktop
 DB: NuDB
