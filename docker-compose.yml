@@ -10,6 +10,6 @@ services:
       # - ./data:/var/lib/rippled
       # - ./config/rippled.cfg:/etc/opt/ripple/rippled.cfg:ro
       - ./data-standalone:/var/lib/rippled
-      - ./config/config/rippled-standalone.cfg:/etc/opt/ripple/rippled.cfg:ro
+      - ./config/rippled-standalone.cfg:/etc/opt/ripple/rippled.cfg:ro
     restart: unless-stopped
 
