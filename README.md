@@ -90,3 +90,13 @@ du -h ~/xrpl/data
 - Platform: macOS + Docker Desktop
 - DB: NuDB
 - 履歴: 256 ledgers (online_delete=512)
+
+
+## 💡 モードの種類（rippled の基本3モード）
+
+
+| モード名 | `[standalone]` 有無 | ネット接続 | ledger進行方法 | 主な用途 |
+|-----------|--------------------|-------------|----------------|-----------|
+| **networked（通常モード）** | 無 | 接続あり | 自動 | メインネット運用、検証ノード |
+| **offline モード** | 無 | 接続なし（ただし自動起動後は即終了） | 手動（limited） | データ復旧、エクスポート等 |
+| **standalone モード** | 有 | 接続なし | `ledger_accept` 手動 | ローカル開発・テスト・ベンチマーク |
