@@ -5,7 +5,7 @@ services:
     ports:
       - "5005:5005"    # JSON-RPC
       - "6006:6006"    # WebSocket
-      - "51235:51235"  # P2P
+      # - "51235:51235"  # P2P ← standaloneなら不要
     volumes:
       - ./data:/var/lib/rippled
       - ./config/rippled.cfg:/etc/opt/ripple/rippled.cfg:ro
