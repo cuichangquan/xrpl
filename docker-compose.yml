@@ -12,4 +12,3 @@ services:
       - ./data-standalone:/var/lib/rippled
       - ./config/rippled-standalone.cfg:/etc/opt/ripple/rippled.cfg:ro
     restart: unless-stopped
-
