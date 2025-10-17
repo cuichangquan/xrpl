@@ -2,6 +2,7 @@ services:
   xrpld:
     image: xrpllabsofficial/xrpld:latest
     container_name: xrpld
+    command: ["-a"]     # -a（standaloneフラグ）だけを追加すればOK。
     ports:
       - "5005:5005"    # JSON-RPC
       - "6006:6006"    # WebSocket
