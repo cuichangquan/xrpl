@@ -83,6 +83,19 @@ docker compose down
 
 # ディスク使用量を確認
 du -h ~/xrpl/data
+
+# rippled のヘルプを表示
+docker exec -it xrpld rippled --help
+
+#--------コンテナ内に入る--------
+docker exec -it xrpld bash
+
+# rippled のバージョンを確認
+rippled --version
+
+# rippled のヘルプを表示
+rippled help
+#--------------------------------
 ```
 
 ## 🧩 環境情報
@@ -100,3 +113,4 @@ du -h ~/xrpl/data
 | **networked（通常モード）** | 無 | 接続あり | 自動 | メインネット運用、検証ノード |
 | **offline モード** | 無 | 接続なし（ただし自動起動後は即終了） | 手動（limited） | データ復旧、エクスポート等 |
 | **standalone モード** | 有 | 接続なし | `ledger_accept` 手動 | ローカル開発・テスト・ベンチマーク |
+
